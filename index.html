@@ -9,22 +9,31 @@
     </head>
     <body>
 
-        <div id="lang-app">                        
-            <div v-if="langdata.loaded">                          
-              <table>
-                    <tr>
-                        <th>{{t('Language')}}</th>
-                        <th class="number">{{t('Percentage')}}</th>
-                    </tr>
-                    <tr v-for='lang in orderedLanguages'>
-                        <td>{{lang.name}}</td>
-                        <td class="number">{{lang.percent | fixed(2)}}%</td>
-                    </tr>
-                </table>
-            </div>
+      <div id="lang-app">                        
+        <div v-if="langdata.loaded">   
+          <!--<h4>
+            Programming languages used during the last 7 days
+          </h4>-->                       
+          <table>
+              <!--<tr>
+                  <th>{{t('Language')}}</th>
+                  <th class="number">{{t('Percentage')}}</th>
+              </tr>-->
+              <tr>
+                <th colspan="2">Programming languages used during the last 7 days</th>
+              </tr>
+              <tr v-for='lang in orderedLanguages'>
+                  <td>{{lang.name}}</td>
+                  <td class="number">{{lang.percent | fixed(2)}}%</td>
+              </tr>
+          </table>
+          <div class="poweredby">
+            (Powered by <a href="https://wakatime.com/" target="_blank">wakatime.com</a>)
+          </div>
         </div>
-        
-        <script src="langApp.js"></script>
+      </div>      
+      <script src="langApp.js"></script>
 
     </body>
+
 </html>

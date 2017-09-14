@@ -2,7 +2,7 @@ var langApp = new Vue({
     el: '#lang-app',
     data: {
         res: i18n,
-        lang: "sv-SE",
+        lang: "en-US",
         langdata: {
             loaded: false,
             data: [],
