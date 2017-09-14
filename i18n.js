@@ -3,6 +3,7 @@ var i18n = {
     texts: {
         Language: ["Language", "Språk"],
         Percentage: ["Percentage", "Procent"],
+        LanguagesTitle: ["Programming languages used during the last 7 days", "Programmeringsspråk jag använt de senaste 7 dagarna"],
     },
     getText: function(text, lang) {
         if(!this.languages || !this.texts || this.texts[text] == null) return text;
