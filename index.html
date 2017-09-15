@@ -37,10 +37,10 @@
               <td>{{event.created_at}}</td>
               <td>
                 <div v-for="commit in event.payload.commits">
-                  {{commit.message}}
+                  <a :href="'https://github.com/' + event.repo.name + '/commit/' + commit.sha" target="_blank">{{commit.message}}</a>
                 </div>
               </td>
-              <td>{{event.repo.name}}</td>
+              <td><a :href="'https://github.com/' + event.repo.name" target="_blank">{{event.repo.name}}</a></td>
             </tr>
         </div>
 
