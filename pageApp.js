@@ -3,6 +3,7 @@ var langApp = new Vue({
     data: {
         res: i18n,
         lang: "en-US",
+        medata: me,
         langdata: [],
         githubdata: [],
     },
@@ -31,7 +32,10 @@ var langApp = new Vue({
         },
         githubCommits: function() {
             return _(this.githubdata.data).filter(function(e) {return e.type == 'PushEvent'}).orderBy('created_at', 'desc').value();
-        }
+        },
+        orderedExperience: function() {
+            return _(this.medata.experience).orderBy('end', 'desc').value();
+        },
     },
     created: function() {
         this.loadData();
