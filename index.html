@@ -9,7 +9,8 @@
     </head>
     <body>
 
-      <div id="lang-app">                        
+      <div id="page-app">  
+
         <div v-if="langdata.loaded">     
           <table>
               <tr>
@@ -24,8 +25,27 @@
             (Powered by <a href="https://wakatime.com/" target="_blank">wakatime.com</a>)
           </div>
         </div>
+
+        <br>
+
+        <div v-if="githubdata.loaded">
+          <table>
+            <tr>
+              <th colspan="3">Latest commits at GitHub</th>
+            </tr>
+            <tr v-for="event in githubCommits">
+              <td>{{event.created_at}}</td>
+              <td>
+                <div v-for="commit in event.payload.commits">
+                  {{commit.message}}
+                </div>
+              </td>
+              <td>{{event.repo.name}}</td>
+            </tr>
+        </div>
+
       </div>      
-      <script src="langApp.js"></script>
+      <script src="pageApp.js"></script>
 
     </body>
 

@@ -7,17 +7,17 @@ body {
 
 /* lang-app */
 
-#lang-app {
+#page-app {
     padding: 8px;
 }
 
-#lang-app table {
+#page-app table {
     border-spacing: 0;
     border-collapse: collapse;
     font-size: 13px;
 }
-#lang-app th,
-#lang-app td {
+#page-app th,
+#page-app td {
     background: #ffffff;
     vertical-align: top;
     text-align: left;
@@ -25,16 +25,16 @@ body {
     padding-right: 4px; 
     border: 1px solid #666666;
 }
-#lang-app th {
+#page-app th {
     color: #6666cc;
     background: #e0e0e0;
 }
-#lang-app th.number, 
-#lang-app td.number {
+#page-app th.number, 
+#page-app td.number {
     text-align: right;
 }
 
-#lang-app .poweredby {
+#page-app .poweredby {
     padding-top: 5px;
     font-size: 13px;
 }
