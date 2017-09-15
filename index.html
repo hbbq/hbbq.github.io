@@ -1,9 +1,13 @@
 <html>
     <head>
         
-        <title>x</title>
-        <script src="v.m.js"></script>
+        <title>hbbq.github.io</title>
+
+        <script src="vue.min.js"></script>
+        <script src="vue-resource.min.js"></script>
+        <script src="lodash.min.js"></script>
         <script src="i18n.js" charset="utf-8"></script>
+
         <link rel="stylesheet" href="style.css"></link>
 
     </head>
@@ -17,8 +21,8 @@
                 <th colspan="2">{{t('LanguagesTitle')}}</th>
               </tr>
               <tr v-for='lang in orderedLanguages'>
-                  <td>{{lang.name}}</td>
-                  <td class="number">{{lang.percent | fixed(2)}}%</td>
+                <td>{{lang.name}}</td>
+                <td class="number">{{lang.percent | fixed(2)}}%</td>
               </tr>
           </table>
           <div class="poweredby">
@@ -31,10 +35,10 @@
         <div v-if="githubdata.loaded">
           <table>
             <tr>
-              <th colspan="3">Latest commits at GitHub</th>
+              <th colspan="3">{{t('CommitsTitle')}}</th>
             </tr>
             <tr v-for="event in githubCommits">
-              <td>{{event.created_at}}</td>
+              <td>{{event.created_at | cleanDate}}</td>
               <td>
                 <div v-for="commit in event.payload.commits">
                   <a :href="'https://github.com/' + event.repo.name + '/commit/' + commit.sha" target="_blank">{{commit.message}}</a>
@@ -42,6 +46,7 @@
               </td>
               <td><a :href="'https://github.com/' + event.repo.name" target="_blank">{{event.repo.name}}</a></td>
             </tr>
+          </table>
         </div>
 
       </div>      

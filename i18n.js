@@ -4,6 +4,7 @@ var i18n = {
         Language: ["Language", "Språk"],
         Percentage: ["Percentage", "Procent"],
         LanguagesTitle: ["Programming languages used during the last 7 days", "Programmeringsspråk jag använt de senaste 7 dagarna"],
+        CommitsTitle: ["Latest commits at GitHub", "Mina senaste \"commits\" på GitHub"],
     },
     getText: function(text, lang) {
         if(!this.languages || !this.texts || this.texts[text] == null) return text;

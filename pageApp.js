@@ -39,6 +39,9 @@ var langApp = new Vue({
     filters: {
         fixed: function (value, decimals) {
             return value.toFixed(decimals);
-        }
+        },
+        cleanDate: function(value) {
+            return value.replace('T', ' ').replace('Z', '');
+        },
     }
 });
