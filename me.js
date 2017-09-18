@@ -50,7 +50,7 @@ var me = {
             end: "2016-09-30",
             title: "Senior Software Engineer / Operations Manager",
             description: "System development",
-            keywords: ["Web", "ASP", "T-SQL", "JavaScript", "VB6", "ASP.NET", "C#", "VB.NET", "MVC", "Webforms", ".NET", "ERP", "Azure", "Git", "GitHub", "TeamCity", "Octopus Deploy", "CI/CD", "Azure"],
+            keywords: ["Web", "ASP", "T-SQL", "JavaScript", "VB6", "ASP.NET", "C#", "VB.NET", "MVC", "Webforms", ".NET", "ERP", "Azure", "Git", "GitHub", "TeamCity", "OctopusDeploy", "CI/CD", "Azure"],
         },
         {
             type: "work",
@@ -63,7 +63,7 @@ var me = {
                 url: "http://www.alektumgroup.se",
             },
             title: "Senior System Developer",
-            keywords: ["Web", "T-SQL", "JavaScript", "ASP.NET", "C#", "MVC", "Webforms", ".NET", "Git", "TFS", "CI/CD", ".NET Core"],
+            keywords: ["Web", "T-SQL", "JavaScript", "ASP.NET", "C#", "MVC", "Webforms", ".NET", "Git", "TFS", "CI/CD", ".NETCore"],
         },
         {
             type: "education",
@@ -75,7 +75,7 @@ var me = {
                 location: "Gothenburg, Sweden",
                 url: "",
             },
-            keywords: ["Photoshop", "Indesign", "Illustrator", "Dreamweaver", "HomeSite", "HTML", "Windows NT", "UNIX", "TCP/IP", "IIS", "Apache", "Exchange server", "SQL server", "T-SQL", "ASP", "JavaScript"],
+            keywords: ["Photoshop", "Indesign", "Illustrator", "Dreamweaver", "HomeSite", "HTML", "WindowsNT", "UNIX", "TCP/IP", "IIS", "Apache", "ExchangeServer", "SQLServer", "T-SQL", "ASP", "JavaScript"],
         },
         {
             type: "education",
@@ -87,7 +87,7 @@ var me = {
                 location: "Alingsås, Sweden",
                 url: "",
             }
-            ,keywords: ["Windows 95", "Office 97", "Network", "Windows NT", "Novell", "HTML", "Visual Basic", "C++"],
+            ,keywords: ["Windows95", "Office97", "Network", "WindowsNT", "Novell", "HTML", "VisualBasic", "C++"],
         }
     ]
 };
