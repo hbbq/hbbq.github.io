@@ -50,7 +50,7 @@ var me = {
             end: "2016-09-30",
             title: "Senior Software Engineer / Operations Manager",
             description: "System development",
-            keywords: ["Web", "ASP", "T-SQL", "JavaScript", "VB6", "ASP.NET", "C#", "VB.NET", "MVC", "Webforms", ".NET", "ERP", "Azure", "Git", "GitHub", "TeamCity", "OctopusDeploy", "CI/CD", "Azure"],
+            keywords: ["Web", "ASP", "ASP.NET", "T-SQL", "C/AL", "DynamicsAX", "DynamicsNAV", "EpicorIScala", "EpicorERP", "JavaScript", "VB6", "ASP.NET", "C#", "VB.NET", "MVC", "Webforms", ".NET", "ERP", "Azure", "Git", "GitHub", "TeamCity", "OctopusDeploy", "CI/CD", "Azure"],
         },
         {
             type: "work",
