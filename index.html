@@ -62,6 +62,21 @@
 
         </div>
 
+        <div style="float: right; padding-right: 10px;">
+
+          <div>
+            <table>
+              <tr>
+                <th>Private experience</th>
+              </tr>
+              <tr>
+                <td><slot v-for='word in medata.privateexperience'>#{{word}} </slot></td>
+              </tr>
+            </table>
+          </div>
+
+        </div>
+
         <div v-if="langdata.loaded">     
           <table>
               <tr>

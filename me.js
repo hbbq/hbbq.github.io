@@ -24,7 +24,7 @@ var me = {
             end: "2000-07-31",
             title: "Internship",
             description: "System development",
-            keywords: ["Web", "ASP", "T-SQL", "JavaScript", "VB6"],
+            keywords: ["Web", "ASP", "T-SQL", "HTML", "JavaScript", "VB6"],
         },
         {
             type: "work",
@@ -35,7 +35,7 @@ var me = {
             },
             start: "2014-09-01",
             end: "2016-03-31",
-            title: "Operation Manager",
+            title: "Operations Manager",
             description: "Support and supervision of hosted solutions in Microsoft Azure",
             keywords: ["Azure"],
         },
@@ -50,7 +50,11 @@ var me = {
             end: "2016-09-30",
             title: "Senior Software Engineer / Operations Manager",
             description: "System development",
-            keywords: ["Web", "ASP", "ASP.NET", "T-SQL", "C/AL", "DynamicsAX", "DynamicsNAV", "EpicorIScala", "EpicorERP", "JavaScript", "VB6", "ASP.NET", "C#", "VB.NET", "MVC", "Webforms", ".NET", "ERP", "Azure", "Git", "GitHub", "TeamCity", "OctopusDeploy", "CI/CD", "Azure"],
+            keywords: [
+                ".NET", "ASP.NET", "MVC", "C#", "T-SQL", "VB.NET", "HTML", "CSS", "JavaScript", "JQuery", "Angular", "REST", 
+                "ERP", "Azure", "Git", "GitHub", "TeamCity", "OctopusDeploy", "CI/CD",
+                "DynamicsAX", "DynamicsNAV", "EpicoriScala", "EpicorERP", 
+                "ASP", "Webforms", "VB6", "C/AL"],
         },
         {
             type: "work",
@@ -63,7 +67,10 @@ var me = {
                 url: "http://www.alektumgroup.se",
             },
             title: "Senior System Developer",
-            keywords: ["Web", "T-SQL", "JavaScript", "ASP.NET", "C#", "MVC", "Webforms", ".NET", "Git", "TFS", "CI/CD", ".NETCore"],
+            keywords: [
+                ".NET", ".NETCore", "ASP.NET", "ASP.NETCore", "MVC", "C#", "T-SQL", "HTML", "CSS", "JavaScript", "JQuery", "Angular", "REST", 
+                "Git", "TFS", "CI/CD",
+                "SQLCLR", "Webforms"],
         },
         {
             type: "education",
@@ -89,5 +96,8 @@ var me = {
             }
             ,keywords: ["Windows95", "Office97", "Network", "WindowsNT", "Novell", "HTML", "VisualBasic", "C++"],
         }
-    ]
+    ],
+    privateexperience : [
+        "F#", "Python", "PHP", "Unity3D", "Xamarin", "Vue.js", "Lodash", "SQLite"
+    ],
 };

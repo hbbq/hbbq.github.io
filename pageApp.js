@@ -23,7 +23,7 @@ var langApp = new Vue({
                     loaded: true,
                     data: response.body.data,
                 };
-            });
+            });            
         },
     },
     computed: {
