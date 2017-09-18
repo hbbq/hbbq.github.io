@@ -18,11 +18,32 @@
 
         <div style="float: right;">
           
-          <div v-for='exp in orderedExperience'>
+          <div v-for='exp in experience'>
 
-            <table style="width: 400px;">
+            <table v-if='exp.type == "work"' style="width: 400px;">
+              <tr>
+                <td>Work</td>
+              </tr>
               <tr>
                 <th>{{exp.employer.name}} - {{exp.title}}</th>
+              </tr>
+              <tr>
+                <td>{{exp.start}} - {{exp.end}}</td>
+              </tr>
+              <tr>
+                <td>{{exp.description}}</td>
+              </tr>
+              <tr v-if='exp.keywords.length > 0'>
+                <td><slot v-for='word in exp.keywords'>#{{word}} </slot></td>
+              </tr>
+            </table>
+
+            <table v-if='exp.type == "education"' style="width: 400px;">
+              <tr>
+                <td>Education</td>
+              </tr>
+              <tr>
+                <th>{{exp.school.name}}</th>
               </tr>
               <tr>
                 <td>{{exp.start}} - {{exp.end}}</td>

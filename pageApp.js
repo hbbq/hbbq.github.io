@@ -31,9 +31,9 @@ var langApp = new Vue({
             return _(this.langdata.data).orderBy('percent', 'desc').value();
         },
         githubCommits: function() {
-            return _(this.githubdata.data).filter(function(e) {return e.type == 'PushEvent'}).orderBy('created_at', 'desc').value();
+            return _(this.githubdata.data).filter(function(e) {return e.type == 'PushEvent';}).orderBy('created_at', 'desc').value();
         },
-        orderedExperience: function() {
+        experience: function() {
             return _(this.medata.experience).orderBy('end', 'desc').value();
         },
     },
