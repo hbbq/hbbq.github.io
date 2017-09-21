@@ -98,6 +98,6 @@ var me = {
         }
     ],
     privateexperience : [
-        "F#", "Python", "PHP", "Unity3D", "Xamarin", "Vue.js", "Lodash", "SQLite"
+        "F#", "R", "Python", "PHP", "Unity3D", "Xamarin", "Vue.js", "Lodash", "SQLite"
     ],
 };
