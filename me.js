@@ -59,7 +59,7 @@ var me = {
         {
             type: "work",
             start: "2016-10-01",
-            end: "Current",
+            end: "2018-04-30",
             description: "System development",
             employer: {
                 name: "Alektum Group",
@@ -67,6 +67,22 @@ var me = {
                 url: "http://www.alektumgroup.se",
             },
             title: "Senior System Developer",
+            keywords: [
+                ".NET", ".NETCore", "ASP.NET", "ASP.NETCore", "MVC", "C#", "T-SQL", "HTML", "CSS", "JavaScript", "JQuery", "Angular", "REST", 
+                "Git", "TFS", "CI/CD",
+                "SQLCLR", "Webforms"],
+        },
+        {
+            type: "work",
+            start: "2018-05-01",
+            end: "Current",
+            description: "System development",
+            employer: {
+                name: "Alektum Group",
+                location: "Gothenburg, Sweden",
+                url: "http://www.alektumgroup.se",
+            },
+            title: "Solution Architect",
             keywords: [
                 ".NET", ".NETCore", "ASP.NET", "ASP.NETCore", "MVC", "C#", "T-SQL", "HTML", "CSS", "JavaScript", "JQuery", "Angular", "REST", 
                 "Git", "TFS", "CI/CD",
