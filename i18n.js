@@ -3,7 +3,8 @@ var i18n = {
     texts: {
         Language: ["Language", "Språk"],
         Percentage: ["Percentage", "Procent"],
-        LanguagesTitle: ["Programming languages used during the last 7 days", "Programmeringsspråk jag använt de senaste 7 dagarna"],
+        //LanguagesTitle: ["Programming languages used during the last 7 days", "Programmeringsspråk jag använt de senaste 7 dagarna"],
+        LanguagesTitle: ["Programming languages used during the last year", "Programmeringsspråk jag använt det senaste året"],
         CommitsTitle: ["Latest commits at GitHub", "Mina senaste \"commits\" på GitHub"],
     },
     getText: function(text, lang) {
