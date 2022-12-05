@@ -12,7 +12,8 @@ var langApp = new Vue({
             return this.res.getText(text, this.lang);
         },
         loadData: function() {
-            this.$http.jsonp('https://wakatime.com/share/@74d4c724-26da-438d-baa7-06026a9391c9/d2be2c53-20ae-4ac4-b92d-42f516260c32.json').then(function(response){
+            //this.$http.jsonp('https://wakatime.com/share/@74d4c724-26da-438d-baa7-06026a9391c9/d2be2c53-20ae-4ac4-b92d-42f516260c32.json').then(function(response){
+            this.$http.jsonp('https://wakatime.com/share/@74d4c724-26da-438d-baa7-06026a9391c9/616c84af-bd80-4666-8b90-2ee0ebfd6f29.json').then(function(response){
                 this.langdata = {
                     loaded: true,
                     data: response.body.data,
