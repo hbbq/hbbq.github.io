@@ -100,7 +100,7 @@ var me = {
             },
             title: "IT Consultant / Senior System Developer",
             keywords: [
-                ".NET", "C#", "T-SQL", "TypeScript", "React", "Entity framework", "Git"],
+                ".NET", "C#", "T-SQL", "TypeScript", "React", "EntityFramework", "Git"],
         },
         {
             type: "education",
