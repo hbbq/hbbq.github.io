@@ -91,7 +91,7 @@ var me = {
         {
             type: "work",
             start: "2022-11-11",
-            end: "current",
+            end: "Current",
             description: "IT Consulting",
             employer: {
                 name: "Conprimo AB",
@@ -128,6 +128,6 @@ var me = {
         }
     ],
     privateexperience : [
-        "F#", "R", "Python", "PHP", "Unity3D", "Xamarin", "Vue.js", "Lodash", "SQLite"
+        "Blazor", "F#", "Lodash", "Lua", "PHP", "Python", "R", "SQLite", "Unity3D", "Vue.js", "Xamarin"
     ],
 };
