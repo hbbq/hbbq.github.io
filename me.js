@@ -75,7 +75,7 @@ var me = {
         {
             type: "work",
             start: "2018-05-01",
-            end: "Current",
+            end: "2022-11-10",
             description: "System development",
             employer: {
                 name: "Alektum Group",
@@ -87,6 +87,20 @@ var me = {
                 ".NET", ".NETCore", "ASP.NET", "ASP.NETCore", "MVC", "C#", "T-SQL", "HTML", "CSS", "JavaScript", "JQuery", "Angular", "REST", 
                 "Git", "TFS", "CI/CD",
                 "SQLCLR", "Webforms"],
+        },
+        {
+            type: "work",
+            start: "2022-11-11",
+            end: "current",
+            description: "IT Consulting",
+            employer: {
+                name: "Conprimo AB",
+                location: "Gothenburg, Sweden",
+                url: "https://conprimo.se/",
+            },
+            title: "IT Consultant / Senior System Developer",
+            keywords: [
+                ".NET", "C#", "T-SQL", "TypeScript", "React", "Entity framework", "Git"],
         },
         {
             type: "education",
