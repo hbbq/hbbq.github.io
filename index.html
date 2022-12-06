@@ -61,11 +61,6 @@
 
         <div v-if="languagesLoaded">     
           <table>
-              <!--<tr><th colspan="2">{{t('LanguagesTitle')}}</th></tr>
-              <tr v-for='lang in orderedLanguages'>
-                <td>{{lang.name}}</td>
-                <td class="number">{{lang.percent | fixed(2)}}%</td>
-              </tr>-->
               <tr>
                 <th>Language</th>
                 <th>Last 7 days</th>
@@ -74,8 +69,8 @@
               </tr>
               <tr v-for='lang in orderedLanguages'>
                 <td>{{lang.name}}</td>
-                <td class="number">{{lang.percent | fixed(2)}}%</td>
-                <td class="number">{{lang.percent30 | fixed(2)}}%</td>
+                <td v-bind:class="['number', lang.direction7 ]">{{lang.percent | fixed(2)}}%</td>
+                <td v-bind:class="['number', lang.direction30 ]">{{lang.percent30 | fixed(2)}}%</td>
                 <td class="number">{{lang.percentYear | fixed(2)}}%</td>
               </tr>
           </table>
