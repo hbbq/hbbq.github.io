@@ -50,6 +50,23 @@
 
           <div>
             <table>
+              <tr>
+                <th>Technique</th>
+                <th v-for='year in years'>{{year | shortYear}}</th>
+              </tr>
+              <tr v-for='tech in techniques'>
+                <td>{{tech.name}}</td>
+                <td v-for='year in years' v-bind:class="tech.work.includes(year) ? 'work' : (tech.education.includes(year) ? 'education' : (tech.private.includes(year) ? 'private' : ''))"></td>
+              </tr>
+            </table>
+          </div>
+
+        </div>
+
+        <div class="righty">
+
+          <div>
+            <table>
               <tr><th>Private experience</th></tr>
               <tr v-for='word in medata.privateexperience'>
                 <td>#{{word}}</td>
@@ -59,6 +76,10 @@
 
         </div>
 
+        <div class="lefty">
+          <table>
+            <tr><th>WakaTime stats</th></tr>
+            <tr><td>
         <div v-if="languagesLoaded" class="lefty">     
           <table>
               <tr>
@@ -79,7 +100,7 @@
           </div>-->
         </div>
 
-        <div v-if="editorsLoaded" class="lefty">
+        <div v-if="editorsLoaded" class="righty">
 
           <div>
             <table>
@@ -100,7 +121,7 @@
 
         </div>
 
-        <div v-if="categoryLoaded" class="lefty">
+        <div v-if="categoryLoaded" class="righty">
 
           <div>
             <table>
@@ -121,7 +142,7 @@
 
         </div>
 
-        <div v-if="osesLoaded" class="lefty">
+        <div v-if="osesLoaded" class="righty">
 
           <div>
             <table>
@@ -141,6 +162,13 @@
           </div>
 
         </div>
+
+        
+              
+      </td></tr>
+    </table>
+
+    </div>
         
         <div v-if="githubdata.loaded" class="lefty">
           <table>

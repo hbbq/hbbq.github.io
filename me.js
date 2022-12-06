@@ -130,4 +130,138 @@ var me = {
     privateexperience : [
         "Blazor", "F#", "Lodash", "Lua", "PHP", "Python", "R", "SQLite", "Unity3D", "Vue.js", "Xamarin"
     ],
+    techniques : [
+        {
+            name: ".NET",
+            work: [2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+            education: [],
+            private: [],
+        },
+        {
+            name: ".NET Core",
+            work: [2016, 2017, 2018, 2019, 2020, 2021, 2022],
+            education: [],
+            private: [],
+        },
+        {
+            name: "ASP",
+            work: [2000, 2001, 2002, 2003, 2004],
+            education: [1998, 1999],
+            private: [],
+        },
+        {
+            name: "ASP.NET MVC",
+            work: [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020],
+            education: [],
+            private: [],
+        },
+        {
+            name: "Azure",
+            work: [2011, 2012, 2013, 2014, 2015, 2016],
+            education: [],
+            private: [],
+        },
+        {
+            name: "Blazor",
+            work: [],
+            education: [],
+            private: [2022],
+        },
+        {
+            name: "C#",
+            work: [2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+            education: [],
+            private: [],
+        },
+        {
+            name: "F#",
+            work: [],
+            education: [],
+            private: [2018, 2019, 2020, 2021, 2022],
+        },
+        {
+            name: "Git",
+            work: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+            education: [],
+            private: [],
+        },
+        {
+            name: "Lua",
+            work: [],
+            education: [],
+            private: [2018, 2019],
+        },
+        {
+            name: "PHP",
+            work: [],
+            education: [],
+            private: [2013, 2014, 2015, 2016, 2017, 2018],
+        },
+        {
+            name: "Python",
+            work: [],
+            education: [],
+            private: [2019, 2020],
+        },
+        {
+            name: "React",
+            work: [2022],
+            education: [],
+            private: [],
+        },
+        {
+            name: "SQL",
+            work: [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+            education: [1998, 1999],
+            private: [],
+        },
+        {
+            name: "Typescript",
+            work: [2022],
+            education: [],
+            private: [],
+        },
+        {
+            name: "VB.NET",
+            work: [2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016],
+            education: [],
+            private: [],
+        },
+        {
+            name: "VB6",
+            work: [2000, 2001, 2002, 2003],
+            education: [1998, 1999],
+            private: [],
+        },
+        {
+            name: "Vue.js",
+            work: [2017, 2018, 2019],
+            education: [],
+            private: [2020, 2021, 2022],
+        },
+        {
+            name: "Entity framework",
+            work: [2018, 2019, 2020, 2021, 2022],
+            education: [],
+            private: [],
+        },
+        {
+            name: "HTML",
+            work: [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+            education: [1998, 1999],
+            private: [],
+        },
+        {
+            name: "AngularJS",
+            work: [2015, 2016, 2017],
+            education: [],
+            private: [],
+        },
+        {
+            name: "C/AL",
+            work: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016],
+            education: [],
+            private: [],
+        },
+    ]
 };

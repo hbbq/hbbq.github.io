@@ -64,3 +64,13 @@ body {
 #page-app a:hover {
     color: #99d;
 }
+
+#page-app td.work {
+    background: #006600;
+}
+#page-app td.education {
+    background: #000099;
+}
+#page-app td.private {
+    background: #006666;
+}
