@@ -13,31 +13,17 @@ var langApp = new Vue({
         t: function(text) {
             return this.res.getText(text, this.lang);
         },
+        downloadData: function(url, callback) {
+            this.$http.jsonp(url).then(function(response){
+                callback({loaded: true, data:response.body.data});
+            })
+        },
         loadData: function() {
-            this.$http.jsonp('https://wakatime.com/share/@74d4c724-26da-438d-baa7-06026a9391c9/d2be2c53-20ae-4ac4-b92d-42f516260c32.json').then(function(response){
-                this.langdata7 = {
-                    loaded: true,
-                    data: response.body.data,
-                };
-            });
-            this.$http.jsonp('https://wakatime.com/share/@74d4c724-26da-438d-baa7-06026a9391c9/d39c662f-e8d9-4726-bbb4-55538a3f0b69.json').then(function(response){
-                this.langdata30 = {
-                    loaded: true,
-                    data: response.body.data,
-                };
-            });
-            this.$http.jsonp('https://wakatime.com/share/@74d4c724-26da-438d-baa7-06026a9391c9/616c84af-bd80-4666-8b90-2ee0ebfd6f29.json').then(function(response){
-                this.langdataYear = {
-                    loaded: true,
-                    data: response.body.data,
-                };
-            });
-            this.$http.jsonp('https://api.github.com/users/hbbq/events').then(function(response){
-                this.githubdata = {
-                    loaded: true,
-                    data: response.body.data,
-                };
-            });            
+            me = this;
+            this.downloadData('https://wakatime.com/share/@74d4c724-26da-438d-baa7-06026a9391c9/d2be2c53-20ae-4ac4-b92d-42f516260c32.json', function(data){me.langdata7 = data;});
+            this.downloadData('https://wakatime.com/share/@74d4c724-26da-438d-baa7-06026a9391c9/d39c662f-e8d9-4726-bbb4-55538a3f0b69.json', function(data){me.langdata30 = data;});
+            this.downloadData('https://wakatime.com/share/@74d4c724-26da-438d-baa7-06026a9391c9/616c84af-bd80-4666-8b90-2ee0ebfd6f29.json', function(data){me.langdataYear = data;});
+            this.downloadData('https://api.github.com/users/hbbq/events', function(data){me.githubdata = data;});
         },
     },
     computed: {
@@ -45,19 +31,24 @@ var langApp = new Vue({
             return this.langdata7.loaded && this.langdata30.loaded && this.langdataYear.loaded
         },
         languagesMerged: function() {
-            l30 = this.langdata30;
-            l7 = this.langdata7;
+            me = this;
             return _(this.langdataYear.data).map(function(o) {
                 py = o.percent;
-                d30 = _(l30.data).find({ name: o.name });
-                d7 = _(l7.data).find({ name: o.name });
+                d30 = _(me.langdata30.data).find({ name: o.name });
+                d7 = _(me.langdata7.data).find({ name: o.name });
                 p30 = d30 ? d30.percent : 0;
                 p7 = d7 ? d7.percent : 0;
+                ratio730 = p7 / p30;
+                ratio30y = p30 /py;
+                dir7 = ratio730 < 0.9 ? "down" : (ratio730 > 1.1 ? "up" : "");
+                dir30 = ratio30y < 0.9 ? "down" : (ratio30y > 1.1 ? "up" : "");
                 return {
                     name: o.name,
                     percent: p7,
                     percent30: p30,
-                    percentYear: py
+                    percentYear: py,
+                    direction7: dir7,
+                    direction30: dir30,
                 };
             }).value();
         },

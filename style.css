@@ -38,3 +38,11 @@ body {
     padding-top: 5px;
     font-size: 13px;
 }
+
+#page-app td.up {
+    background: #006600;
+}
+
+#page-app td.down {
+    background: #660000;;
+}
