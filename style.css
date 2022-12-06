@@ -46,3 +46,21 @@ body {
 #page-app td.down {
     background: #660000;;
 }
+
+#page-app div.lefty {
+    float: left;
+    padding: 10px;
+}
+
+#page-app div.righty {
+    float: right;
+    padding: 10px;
+}
+
+#page-app a {
+    color: #559;
+}
+
+#page-app a:hover {
+    color: #99d;
+}
