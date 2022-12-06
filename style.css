@@ -57,6 +57,11 @@ body {
     padding: 10px;
 }
 
+#page-app div.undecidy {
+    float: unset;
+    padding: 10px;
+}
+
 #page-app a {
     color: #559;
 }
