@@ -1,4 +1,8 @@
 var me = {
+    about: {
+        name: "Henrik Bergqvist",
+        born: 1978
+    },
     experience: [
         {
             type: "work",

@@ -56,6 +56,18 @@
             </table>
         </div>
 
+        <div class="righty">
+
+          <table>
+            <tr><th colspan=2>About</th></tr>
+            <tr v-for='prop in aboutMeAsArray'>
+              <td>{{prop.name}}</td>
+              <td>{{prop.value}}</td>
+            </tr>
+          </table>
+
+        </div>
+
         <div class="lefty">
 
           <table>
