@@ -1,11 +1,7 @@
 const WakaDataPart = (key) => ({
     key: key,
-    data: {},
-    loaded: false,
-    setData: function(v) {
-        this.data = v;
-        this.loaded = true;
-    }
+    data: null,
+    isLoaded: function() {return this.data != null;},
 });
 
 const WakaType = (type, header, key7, key30, keyYear) => ({
@@ -16,31 +12,20 @@ const WakaType = (type, header, key7, key30, keyYear) => ({
         WakaDataPart(key30),
         WakaDataPart(keyYear)
     ],
-    data7: function() {return this.datas[0]},
-    data30: function() {return this.datas[1]},
-    dataYear: function() {return this.datas[2]},
-    isLoaded: function() {
-        return _(this.datas).filter(x => x.loaded).size() == 3;
-    },
+    isLoaded: function() {return _(this.datas).every(x => x.isLoaded());},
     mergedData: function() {
-        return _(this.dataYear().data).map(oYear => {
-            pYear = oYear.percent;
-            o30 = _(this.data30().data).find({ name: oYear.name });
-            o7 = _(this.data7().data).find({ name: oYear.name });
-            p30 = o30 ? o30.percent : 0;
-            p7 = o7 ? o7.percent : 0;
-            ratio7_30 = p7 / p30;
-            ratio30_Year = p30 / pYear;
-            dir7 = ratio7_30 < 0.9 ? "down" : (ratio7_30 > 1.1 ? "up" : "");
-            dir30 = ratio30_Year < 0.9 ? "down" : (ratio30_Year > 1.1 ? "up" : "");
+        const upDown = (t, n) => t < n * 0.9 ? "down" : (t > n * 1.1 ? "up" : "");
+        return _(this.datas[2].data).map(oYear => {
+            p30 = _(this.datas[1].data).find({ name: oYear.name })?.percent ?? 0;
+            p7 = _(this.datas[0].data).find({ name: oYear.name })?.percent ?? 0;
             return {
                 name: oYear.name,
                 color: oYear.color,
                 percent7: p7,
                 percent30: p30,
-                percentYear: pYear,
-                direction7: dir7,
-                direction30: dir30,
+                percentYear: oYear.percent,
+                direction7: upDown(p7, p30),
+                direction30: upDown(p30, oYear.percent),
             };
         }).value();
     },
@@ -102,7 +87,7 @@ var langApp = new Vue({
         loadData: function() {
             this.wakadata.types.forEach(cat => {
                 cat.datas.forEach(datapoint => {
-                    this.downloadData('https://wakatime.com/share/@74d4c724-26da-438d-baa7-06026a9391c9/' + datapoint.key + '.json', data => datapoint.setData(data.data));
+                    this.downloadData('https://wakatime.com/share/@74d4c724-26da-438d-baa7-06026a9391c9/' + datapoint.key + '.json', data => datapoint.data = data.data);
                 });
             });
             this.downloadData('https://api.github.com/users/hbbq/events', data => this.githubdata = data);

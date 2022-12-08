@@ -18,7 +18,7 @@
 
         <div class="righty">
           
-          <div v-for='exp in experience'>
+          <div v-for='exp in experience' style="padding-bottom: 20px;">
 
             <table style="width: 400px;">
               <tr v-if='exp.type == "work"'><td>Work</td></tr>
@@ -31,9 +31,7 @@
                 <td><slot v-for='word in exp.keywords'>#{{word}} </slot></td>
               </tr>
             </table>
-
-            <br>
-
+            
           </div>
 
         </div>
@@ -102,6 +100,7 @@
         </div>
 
       </div>      
+      
       <script src="pageApp.js"></script>
 
     </body>
