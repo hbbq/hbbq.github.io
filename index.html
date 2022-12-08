@@ -20,19 +20,11 @@
           
           <div v-for='exp in experience'>
 
-            <table v-if='exp.type == "work"' style="width: 400px;">
-              <tr><td>Work</td></tr>
-              <tr><th>{{exp.employer.name}} - {{exp.title}}</th></tr>
-              <tr><td>{{exp.start}} - {{exp.end}}</td></tr>
-              <tr><td>{{exp.description}}</td></tr>
-              <tr v-if='exp.keywords.length > 0'>
-                <td><slot v-for='word in exp.keywords'>#{{word}} </slot></td>
-              </tr>
-            </table>
-
-            <table v-if='exp.type == "education"' style="width: 400px;">
-              <tr><td>Education</td></tr>
-              <tr><th>{{exp.school.name}}</th></tr>
+            <table style="width: 400px;">
+              <tr v-if='exp.type == "work"'><td>Work</td></tr>
+              <tr v-if='exp.type == "work"'><th>{{exp.employer.name}} - {{exp.title}}</th></tr>
+              <tr v-if='exp.type == "education"'><td>Education</td></tr>
+              <tr v-if='exp.type == "education"'><th>{{exp.school.name}}</th></tr>
               <tr><td>{{exp.start}} - {{exp.end}}</td></tr>
               <tr><td>{{exp.description}}</td></tr>
               <tr v-if='exp.keywords.length > 0'>
@@ -47,128 +39,54 @@
         </div>
 
         <div class="righty">
-
-          <div>
-            <table>
-              <tr>
-                <th>Technique</th>
-                <th v-for='year in years'>{{year | shortYear}}</th>
-              </tr>
-              <tr v-for='tech in techniques'>
-                <td>{{tech.name}}</td>
-                <td v-for='year in years' v-bind:class="tech.work.includes(year) ? 'work' : (tech.education.includes(year) ? 'education' : (tech.private.includes(year) ? 'private' : ''))"></td>
-              </tr>
-            </table>
-          </div>
-
+          <table>
+            <tr>
+              <th>Technique</th>
+              <th v-for='year in years'>{{year | shortYear}}</th>
+            </tr>
+            <tr v-for='tech in techniques'>
+              <td>{{tech.name}}</td>
+              <td v-for='year in years' v-bind:class="tech.work.includes(year) ? 'work' : (tech.education.includes(year) ? 'education' : (tech.private.includes(year) ? 'private' : ''))"></td>
+            </tr>
+          </table>
         </div>
 
         <div class="righty">
-
-          <div>
             <table>
               <tr><th>Private experience</th></tr>
-              <tr v-for='word in medata.privateexperience'>
-                <td>#{{word}}</td>
-              </tr>
+              <tr v-for='word in medata.privateexperience'><td>#{{word}}</td></tr>
             </table>
-          </div>
-
         </div>
 
         <div class="lefty">
+
           <table>
-            <tr><th>WakaTime stats</th></tr>
-            <tr><td>
-        <div v-if="languagesLoaded" class="undecidy">     
-          <table>
-              <tr>
-                <th>Language</th>
-                <th>7 days</th>
-                <th>30 days</th>
-                <th>Year</th>
-              </tr>
-              <tr v-for='x in orderedLanguages'>
-                <td v-bind:style="{color: x.color}">{{x.name}}</td>
-                <td v-bind:class="['number', x.direction7 ]">{{x.percent7 | fixed(2)}}%</td>
-                <td v-bind:class="['number', x.direction30 ]">{{x.percent30 | fixed(2)}}%</td>
-                <td class="number">{{x.percentYear | fixed(2)}}%</td>
-              </tr>
+            <tr><th>WakaTime Stats</th></tr>
+            <tr>
+              <td>
+
+                <div v-for="type in loadedWakaTypes" class="undecidy">
+                  <table>
+                    <tr>
+                      <th>{{type.header}}</th>
+                      <th>7 days</th>
+                      <th>30 days</th>
+                      <th>Year</th>
+                    </tr>
+                    <tr v-for='x in type.sortedData()'>
+                      <td v-bind:style="{color: x.color}">{{x.name}}</td>
+                      <td v-bind:class="['number', x.direction7 ]">{{x.percent7 | fixed(2)}}%</td>
+                      <td v-bind:class="['number', x.direction30 ]">{{x.percent30 | fixed(2)}}%</td>
+                      <td class="number">{{x.percentYear | fixed(2)}}%</td>
+                    </tr>
+                  </table>
+                </div>
+
+              </td>
+            </tr>
           </table>
-          <!--<div class="poweredby">
-            (Powered by <a href="https://wakatime.com/" target="_blank">wakatime.com</a>)
-          </div>-->
-        </div>
-
-        <div v-if="editorsLoaded" class="undecidy">
-
-          <div>
-            <table>
-              <tr>
-                <th>Editor</th>
-                <th>7 days</th>
-                <th>30 days</th>
-                <th>Year</th>
-              </tr>
-              <tr v-for='x in orderedEditors'>
-                <td v-bind:style="{color: x.color}">{{x.name}}</td>
-                <td v-bind:class="['number', x.direction7 ]">{{x.percent7 | fixed(2)}}%</td>
-                <td v-bind:class="['number', x.direction30 ]">{{x.percent30 | fixed(2)}}%</td>
-                <td class="number">{{x.percentYear | fixed(2)}}%</td>
-              </tr>
-            </table>
-          </div>
 
         </div>
-
-        <div v-if="categoryLoaded" class="undecidy">
-
-          <div>
-            <table>
-              <tr>
-                <th>Category</th>
-                <th>7 days</th>
-                <th>30 days</th>
-                <th>Year</th>
-              </tr>
-              <tr v-for='x in orderedCategory'>
-                <td v-bind:style="{color: x.color}">{{x.name}}</td>
-                <td v-bind:class="['number', x.direction7 ]">{{x.percent7 | fixed(2)}}%</td>
-                <td v-bind:class="['number', x.direction30 ]">{{x.percent30 | fixed(2)}}%</td>
-                <td class="number">{{x.percentYear | fixed(2)}}%</td>
-              </tr>
-            </table>
-          </div>
-
-        </div>
-
-        <div v-if="osesLoaded" class="undecidy">
-
-          <div>
-            <table>
-              <tr>
-                <th>OS</th>
-                <th>7 days</th>
-                <th>30 days</th>
-                <th>Year</th>
-              </tr>
-              <tr v-for='x in orderedOses'>
-                <td v-bind:style="{color: x.color}">{{x.name}}</td>
-                <td v-bind:class="['number', x.direction7 ]">{{x.percent7 | fixed(2)}}%</td>
-                <td v-bind:class="['number', x.direction30 ]">{{x.percent30 | fixed(2)}}%</td>
-                <td class="number">{{x.percentYear | fixed(2)}}%</td>
-              </tr>
-            </table>
-          </div>
-
-        </div>
-
-        
-              
-      </td></tr>
-    </table>
-
-    </div>
         
         <div v-if="githubdata.loaded" class="lefty">
           <table>
@@ -176,9 +94,7 @@
             <tr v-for="event in githubCommits">
               <td>{{event.created_at | cleanDate}}</td>
               <td>
-                <div v-for="commit in event.payload.commits">
-                  <a :href="'https://github.com/' + event.repo.name + '/commit/' + commit.sha" target="_blank">{{commit.message}}</a>
-                </div>
+                <div v-for="commit in event.payload.commits"><a :href="'https://github.com/' + event.repo.name + '/commit/' + commit.sha" target="_blank">{{commit.message}}</a></div>
               </td>
               <td><a :href="'https://github.com/' + event.repo.name" target="_blank">{{event.repo.name}}</a></td>
             </tr>
