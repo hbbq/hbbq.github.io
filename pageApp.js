@@ -75,14 +75,14 @@ var langApp = new Vue({
     },
     methods: {
         t: function(text) {return this.res.getText(text, this.lang);},
-        downloadData: function(url, callback) {this.$http.jsonp(url).then(response => callback({loaded: true, data:response.body.data}));},
+        downloadData: function(url, callback) {this.$http.jsonp(url).then(response => callback(response.body.data));},
         loadData: function() {
             this.wakadata.types.forEach(cat => {
                 cat.datas.forEach(datapoint => {
-                    this.downloadData('https://wakatime.com/share/@74d4c724-26da-438d-baa7-06026a9391c9/' + datapoint.key + '.json', data => datapoint.data = data.data);
+                    this.downloadData('https://wakatime.com/share/@74d4c724-26da-438d-baa7-06026a9391c9/' + datapoint.key + '.json', data => datapoint.data = data);
                 });
             });
-            this.downloadData('https://api.github.com/users/hbbq/events', data => this.githubdata = data);
+            this.downloadData('https://api.github.com/users/hbbq/events', data => this.githubdata = {data:data});
         },
         objectToArray: (o) => _(Object.getOwnPropertyNames(o)).filter(x => Object.getOwnPropertyDescriptor(o, x).get).map(x => ({name: x, value: Object.getOwnPropertyDescriptor(o, x).get()})).value(),
     },
