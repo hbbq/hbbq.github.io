@@ -23,7 +23,7 @@ body {
     text-align: left;
     padding-left: 4px;
     padding-right: 4px; 
-    border: 1px solid #666666;
+    border: 1px solid #666;
 }
 #page-app th {
     color: #000;
@@ -43,11 +43,11 @@ body {
 }
 
 #page-app td.up {
-    background: #006600;
+    background: #060;
 }
 
 #page-app td.down {
-    background: #660000;;
+    background: #600;;
 }
 
 #page-app div.lefty {
@@ -74,11 +74,11 @@ body {
 }
 
 #page-app td.work {
-    background: #006600;
+    background: #060;
 }
 #page-app td.education {
-    background: #000099;
+    background: #009;
 }
 #page-app td.private {
-    background: #006666;
+    background: #066;
 }
