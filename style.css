@@ -29,6 +29,9 @@ body {
     color: #000;
     background: #777;
 }
+#page-app th a {
+    color: #336;
+}
 #page-app th.number, 
 #page-app td.number {
     text-align: right;

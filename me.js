@@ -9,7 +9,7 @@ var me = {
             employer: {
                 name: "Tour & Andersson AB",
                 location: "Ljung, Sweden",
-                url: "",
+                url: "https://www.imi-hydronic.com/sv-se/our-brands/imi-ta",
             },
             start: "1997-06-01",
             end: "1998-03-31",

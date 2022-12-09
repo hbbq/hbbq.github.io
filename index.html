@@ -22,7 +22,11 @@
 
             <table style="width: 400px;">
               <tr v-if='exp.type == "work"'><td>Work</td></tr>
-              <tr v-if='exp.type == "work"'><th>{{exp.employer.name}} - {{exp.title}}</th></tr>
+              <tr v-if='exp.type == "work"'><th>
+                <a v-if='exp.employer.url != ""' :href="exp.employer.url" target="_blank">{{exp.employer.name}}</a>
+                <span v-if='exp.employer.url == ""'>{{exp.employer.name}}</span>
+              </th></tr>
+              <tr v-if='exp.type == "work"'><th>{{exp.title}}</th></tr>
               <tr v-if='exp.type == "education"'><td>Education</td></tr>
               <tr v-if='exp.type == "education"'><th>{{exp.school.name}}</th></tr>
               <tr><td>{{exp.start}} - {{exp.end}}</td></tr>
