@@ -41,34 +41,10 @@ var langApp = new Vue({
         githubdata: null,
         wakadata: {
             types: [
-                WakaType(
-                    'languages',
-                    'Language',
-                    'd2be2c53-20ae-4ac4-b92d-42f516260c32',
-                    'd39c662f-e8d9-4726-bbb4-55538a3f0b69',
-                    '616c84af-bd80-4666-8b90-2ee0ebfd6f29'
-                ),
-                WakaType(
-                    'editors',
-                    'Editor',
-                    '0eeeae5e-2d4d-40a1-83f9-b62e85d20aad',
-                    '45db243c-4650-4f12-aebc-7bb74139c33d',
-                    '59307ec0-8afb-4687-8e9f-cb6643e7296a'
-                ),
-                WakaType(
-                    'categories',
-                    'Category',
-                    '1478093c-19af-4a24-8821-65c7a53bfb95',
-                    '71cff214-1869-4e0f-97ce-3de2232e773f',
-                    '3e83a4b1-8bd0-436d-b716-43184dcf19fb'
-                ),
-                WakaType(
-                    'oses',
-                    'OS',
-                    '679b8b0f-4e6b-45e6-88dd-b7a0231b2996',
-                    'e22fefc3-3002-4fe6-91d0-52146aae0aff',
-                    '6eed343a-23c6-4707-887f-65ac9afb1260'
-                ),
+                WakaType('languages',   'Language', 'd2be2c53-20ae-4ac4-b92d-42f516260c32', 'd39c662f-e8d9-4726-bbb4-55538a3f0b69', '616c84af-bd80-4666-8b90-2ee0ebfd6f29'),
+                WakaType('editors',     'Editor',   '0eeeae5e-2d4d-40a1-83f9-b62e85d20aad', '45db243c-4650-4f12-aebc-7bb74139c33d', '59307ec0-8afb-4687-8e9f-cb6643e7296a'),
+                WakaType('categories',  'Category', '1478093c-19af-4a24-8821-65c7a53bfb95', '71cff214-1869-4e0f-97ce-3de2232e773f', '3e83a4b1-8bd0-436d-b716-43184dcf19fb'),
+                WakaType('oses',        'OS',       '679b8b0f-4e6b-45e6-88dd-b7a0231b2996', 'e22fefc3-3002-4fe6-91d0-52146aae0aff', '6eed343a-23c6-4707-887f-65ac9afb1260'),
             ],
             isLoaded: function () {return _(this.types).every(x => x.isLoaded());},
         },
