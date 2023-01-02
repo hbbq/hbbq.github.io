@@ -267,5 +267,11 @@ var me = {
             education: [],
             private: [],
         },
+        {
+            name: "Knockout.js",
+            work: [2022, 2023],
+            education: [],
+            private: [],
+        },
     ]
 };
