@@ -32,22 +32,36 @@ const WakaType = (type, header, key7, key30, keyYear) => ({
     sortedData: function () {return _(this.mergedData()).orderBy('percent7', 'desc').value();},
 });
 
+const routes = {
+    '#/': 'main',
+    '#/basics': 'basics',
+    '#/brief': 'brief',
+    '#/notsobrief': 'notsobrief',
+    '#/casestudied': 'casestudies',
+    '#/timeline': 'timeline',
+    '#/techniques': 'techniques',
+    '#/wakatime': 'wakatime',
+    '#/github': 'github',
+}
+
 var langApp = new Vue({
     el: '#page-app',
     data: {
+        currentPath: window.location.hash,
         res: i18n,
         lang: "en-US",
         medata: me,
         githubdata: null,
         wakadata: {
             types: [
-                WakaType('languages',   'Language', 'd2be2c53-20ae-4ac4-b92d-42f516260c32', 'd39c662f-e8d9-4726-bbb4-55538a3f0b69', '616c84af-bd80-4666-8b90-2ee0ebfd6f29'),
-                WakaType('editors',     'Editor',   '0eeeae5e-2d4d-40a1-83f9-b62e85d20aad', '45db243c-4650-4f12-aebc-7bb74139c33d', '59307ec0-8afb-4687-8e9f-cb6643e7296a'),
-                WakaType('categories',  'Category', '1478093c-19af-4a24-8821-65c7a53bfb95', '71cff214-1869-4e0f-97ce-3de2232e773f', '3e83a4b1-8bd0-436d-b716-43184dcf19fb'),
-                WakaType('oses',        'OS',       '679b8b0f-4e6b-45e6-88dd-b7a0231b2996', 'e22fefc3-3002-4fe6-91d0-52146aae0aff', '6eed343a-23c6-4707-887f-65ac9afb1260'),
+                WakaType('languages',   'language', 'd2be2c53-20ae-4ac4-b92d-42f516260c32', 'd39c662f-e8d9-4726-bbb4-55538a3f0b69', '616c84af-bd80-4666-8b90-2ee0ebfd6f29'),
+                WakaType('editors',     'editor',   '0eeeae5e-2d4d-40a1-83f9-b62e85d20aad', '45db243c-4650-4f12-aebc-7bb74139c33d', '59307ec0-8afb-4687-8e9f-cb6643e7296a'),
+                WakaType('categories',  'category', '1478093c-19af-4a24-8821-65c7a53bfb95', '71cff214-1869-4e0f-97ce-3de2232e773f', '3e83a4b1-8bd0-436d-b716-43184dcf19fb'),
+                WakaType('oses',        'os',       '679b8b0f-4e6b-45e6-88dd-b7a0231b2996', 'e22fefc3-3002-4fe6-91d0-52146aae0aff', '6eed343a-23c6-4707-887f-65ac9afb1260'),
             ],
             isLoaded: function () {return _(this.types).every(x => x.isLoaded());},
         },
+        visibleIds: [-1],        
     },
     methods: {
         t: function(text) {return this.res.getText(text, this.lang);},
@@ -61,16 +75,39 @@ var langApp = new Vue({
             this.downloadData('https://api.github.com/users/hbbq/events', data => this.githubdata = {data:data});
         },
         objectToArray: (o) => _(Object.getOwnPropertyNames(o)).filter(x => Object.getOwnPropertyDescriptor(o, x).get).map(x => ({name: x, value: Object.getOwnPropertyDescriptor(o, x).get()})).value(),
+        toggleVisible: function (o) {
+            var id = o.__ob__.dep.id;
+            if(_(this.visibleIds).some(x => x == id)){
+                this.visibleIds = _(this.visibleIds).filter(x => x != id).value();
+            } else {
+                this.visibleIds.push(id);
+            }
+        },
+        isVisible: function(o) {
+            var id = o.__ob__.dep.id;
+            return _(this.visibleIds).some(x => x == id);
+        },
     },
     computed: {
+        routes: () => routes,
+        currentView: function () {return routes[this.currentPath || '#/'];},
         loadedWakaTypes: function() {return _(this.wakadata.types).filter(x => x.isLoaded()).value();},
         githubCommits: function() {return _(this.githubdata.data).filter(e => e.type == 'PushEvent').orderBy('created_at', 'desc').value();},
         experience: function() {return _(this.medata.experience).orderBy('end', 'desc').value();},
         techniques: function() {return _(this.medata.techniques).orderBy('name', 'asc').value();},
         aboutMeAsArray: function() {return this.objectToArray(this.medata.about);},
+        linksAsArray: function() {return this.objectToArray(this.medata.links);},
+        medata: function() {return this.medata;},
         years: () => [1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023],
     },
-    created: function() {this.loadData();},
+    created: function() {
+        this.loadData();
+    },
+    mounted() {
+        window.addEventListener('hashchange', () => {
+            this.currentPath = window.location.hash;
+        });
+    },
     filters: {
         fixed: (value, decimals) => value.toFixed(decimals),
         cleanDate: (value) => value.replace('T', ' ').replace('Z', ''),

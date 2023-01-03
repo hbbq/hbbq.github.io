@@ -5,19 +5,77 @@ body {
     margin: 0;
 }
 
-/* lang-app */
-
-#page-app {
-    padding: 8px;
+.row {
+    display: grid;
+    grid-template-columns: 120px auto;
+    grid-template-rows: 1fr;
+    height: 100vh;
 }
 
-#page-app table {
+#menu {
+    grid-column: 1;
+    grid-row: 1;
+    background-color: #999;
+    color: #000;
+    padding: 0;
+    text-align: center;
+}
+
+#menu h2 {
+    width: 100%;
+}
+
+#menu div {
+    width: 100%;
+}
+
+#menu .current {
+    width: 100%;
+    color: #000;
+    background-color: #666; 
+    padding-top: 3px;
+    padding-bottom: 3px;   
+}
+
+#menu a {
+    color: #000;
+    text-decoration: none;
+    padding-top: 3px;
+    padding-bottom: 3px;  
+    display: block; 
+}
+
+#content {
+    grid-column: 2;
+    grid-row: 1;
+    overflow: auto;
+    text-align: center;
+}
+
+.middler {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centrer {
+    display: inline-block;
+    padding-top: 25px;
+}
+
+#main {
+    font-size: 80px;
+}
+#content table {
     border-spacing: 0;
     border-collapse: collapse;
     font-size: 13px;
 }
-#page-app th,
-#page-app td {
+#content th,
+#content td {
     background: #000;
     vertical-align: top;
     text-align: left;
@@ -25,60 +83,66 @@ body {
     padding-right: 4px; 
     border: 1px solid #666;
 }
-#page-app th {
+#content th {
     color: #000;
     background: #777;
 }
-#page-app th a {
+#content th a {
     color: #336;
 }
-#page-app th.number, 
-#page-app td.number {
+#content th.number, 
+#content td.number {
     text-align: right;
 }
 
-#page-app .poweredby {
+#content .poweredby {
     padding-top: 5px;
     font-size: 13px;
 }
 
-#page-app td.up {
+#content td.up {
     background: #060;
 }
 
-#page-app td.down {
+#content td.down {
     background: #600;;
 }
 
-#page-app div.lefty {
-    float: left;
-    padding: 10px;
+#experience th {
+    font-size: 14px;
 }
 
-#page-app div.righty {
-    float: right;
-    padding: 10px;
+#experience .work tr td {
+    background-color: #020;
 }
 
-#page-app div.undecidy {
-    float: unset;
-    padding: 10px;
+#experience .education tr td {
+    background-color: #002;
 }
 
-#page-app a {
+#experience .other tr td {
+    background-color: #033;
+}
+
+#content a {
     color: #559;
 }
 
-#page-app a:hover {
+#content a:hover {
     color: #99d;
 }
 
-#page-app td.work {
+#content td.work {
     background: #060;
 }
-#page-app td.education {
+#content td.education {
     background: #009;
 }
-#page-app td.private {
+#content td.private {
     background: #066;
+}
+
+.clicker {
+    cursor: hand;
+    color: #559;
 }
