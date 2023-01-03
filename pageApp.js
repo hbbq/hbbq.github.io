@@ -48,9 +48,7 @@ var langApp = new Vue({
     el: '#page-app',
     data: {
         currentPath: window.location.hash,
-        res: i18n,
-        lang: "en-US",
-        medata: me,
+        medata: null,
         githubdata: null,
         wakadata: {
             types: [
@@ -64,7 +62,6 @@ var langApp = new Vue({
         visibleIds: [-1],        
     },
     methods: {
-        t: function(text) {return this.res.getText(text, this.lang);},
         downloadData: function(url, callback) {this.$http.jsonp(url).then(response => callback(response.body.data));},
         loadData: function() {
             this.wakadata.types.forEach(cat => {
@@ -73,6 +70,7 @@ var langApp = new Vue({
                 });
             });
             this.downloadData('https://api.github.com/users/hbbq/events', data => this.githubdata = {data:data});
+            this.$http.get('me.yaml').then(response => this.medata = jsyaml.load(response.body));
         },
         objectToArray: (o) => _(Object.getOwnPropertyNames(o)).filter(x => Object.getOwnPropertyDescriptor(o, x).get).map(x => ({name: x, value: Object.getOwnPropertyDescriptor(o, x).get()})).value(),
         toggleVisible: function (o) {
@@ -86,6 +84,17 @@ var langApp = new Vue({
         isVisible: function(o) {
             var id = o.__ob__.dep.id;
             return _(this.visibleIds).some(x => x == id);
+        }, 
+        keywordDescriptionsAsArray: function() {return this.objectToArray(this.medata.keywords);},
+        enrichKeywords: function(kws) {
+            return _(kws).map(x => {
+                var data = _(this.keywordDescriptionsAsArray()).find({name: x})?.value;
+                return {
+                    keyword: x,
+                    description: data?.name,
+                    type: data?.type,
+                };
+            }).orderBy('keyword', 'asc').value();
         },
     },
     computed: {
@@ -93,11 +102,10 @@ var langApp = new Vue({
         currentView: function () {return routes[this.currentPath || '#/'];},
         loadedWakaTypes: function() {return _(this.wakadata.types).filter(x => x.isLoaded()).value();},
         githubCommits: function() {return _(this.githubdata.data).filter(e => e.type == 'PushEvent').orderBy('created_at', 'desc').value();},
-        experience: function() {return _(this.medata.experience).orderBy('end', 'desc').value();},
+        experience: function() {return _(this.medata.experience).orderBy(['end', 'start'], ['desc', 'desc']).value();},
         techniques: function() {return _(this.medata.techniques).orderBy('name', 'asc').value();},
         aboutMeAsArray: function() {return this.objectToArray(this.medata.about);},
         linksAsArray: function() {return this.objectToArray(this.medata.links);},
-        medata: function() {return this.medata;},
         years: () => [1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023],
     },
     created: function() {

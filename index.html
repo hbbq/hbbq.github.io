@@ -1,202 +1,200 @@
 <html>
-    <head>
-        
-        <title>hbbq.github.io</title>
+  <head>
 
-        <script src="vue.min.js"></script>
-        <script src="vue-resource.min.js"></script>
-        <script src="lodash.min.js"></script>
-        <script src="me.js" charset="utf-8"></script>
-        <script src="i18n.js" charset="utf-8"></script>
+    <title>hbbq.github.io</title>
 
-        <link rel="stylesheet" href="style.css"></link>
+    <script src="vue.min.js"></script>
+    <script src="vue-resource.min.js"></script>
+    <script src="lodash.min.js"></script>
+    <script src="me.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js-yaml.min.js"></script>
 
-    </head>
-    <body>
+    <link rel="stylesheet" href="style.css"></link>
 
-      <div id="page-app" class="row">  
+  </head>
+  <body>
 
-        <div id="menu">
-          <h2>bq</h2>
-          <div v-for='(name, link) in routes'>
-            <div v-if='name == currentView' class="current">#{{name}}</div>
-            <a v-if='name != currentView' :href='link'>#{{name}}</a>
+    <div id="page-app" class="row">  
+
+      <div id="menu">
+        <h2>bq</h2>
+        <div v-for='(name, link) in routes'>
+          <div v-if='name == currentView' class="current">#{{name}}</div>
+          <a v-if='name != currentView' :href='link'>#{{name}}</a>
+        </div>
+      </div>
+
+      <div id="content">
+
+        <div v-if='currentView == "main"' id="main" class="middler">
+          bq
+        </div>
+
+        <div v-if='currentView == "basics" && medata' class="middler">
+          <table>              
+            <tr v-for='prop in aboutMeAsArray'>
+              <td>{{prop.name}}</td>
+              <td>
+                <div v-for='part in prop.value'>{{part}}</div>
+              </td>
+            </tr>
+            <tr>
+              <td>links</td>
+              <td>
+                <div v-for='link in linksAsArray'>
+                  <a :href='link.value' target="_blank">{{link.name}}</a>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div v-if='currentView == "brief" && medata' class="centrer">
+          <div style="padding: 50px;">
+            <p v-for='line in medata.brief'>{{line}}</p>
           </div>
         </div>
 
-        <div id="content">
-
-          <div v-if='currentView == "main"' id="main" class="middler">
-            bq
+        <div v-if='currentView == "notsobrief" && medata' class="centrer">
+          <div style="padding: 50px;">
+            <p v-for='line in medata.notsobrief'>{{line}}</p>
           </div>
+        </div>
 
-          <div v-if='currentView == "basics"' class="middler">
-            <table>              
-              <tr v-for='prop in aboutMeAsArray'>
-                <td>{{prop.name}}</td>
-                <td>
-                  <div v-for='part in prop.value'>{{part}}</div>
-                </td>
-              </tr>
+        <div v-if='currentView == "casestudies" && medata' class="centrer" id="cases">
+
+          <div style="padding-top: 30px; padding-bottom: 30px;">{{medata.bigandsmall.synopsis}}</div>
+
+          <div v-for='cas in medata.bigandsmall.cases' style="padding: 20px; display: inline-block;">
+
+            <table>
+              <tr><th>{{cas.title}}</th></tr>
               <tr>
-                <td>links</td>
                 <td>
-                  <div v-for='link in linksAsArray'>
-                    <a :href='link.value' target="_blank">{{link.name}}</a>
-                  </div>
+                  <ul>
+                    <li v-for='line in cas.lines'>{{line}}</li>
+                  </ul>
                 </td>
               </tr>
             </table>
-          </div>
-
-          <div v-if='currentView == "brief"' class="centrer">
-            <div style="padding: 50px;">
-              <p v-for='line in medata.brief'>{{line}}</p>
-            </div>
-          </div>
-
-          <div v-if='currentView == "notsobrief"' class="centrer">
-            <div style="padding: 50px;">
-              <p v-for='line in medata.notsobrief'>{{line}}</p>
-            </div>
-          </div>
-
-          <div v-if='currentView == "casestudies"' class="centrer">
-
-            <div style="padding-top: 30px; padding-bottom: 30px;">{{medata.bigandsmall.synopsis}}</div>
-
-            <div v-for='cas in medata.bigandsmall.cases' style="padding: 20px; display: inline-block;">
-            
-              <table>
-                <tr><th>{{cas.title}}</th></tr>
-                <tr>
-                  <td>
-                    <p v-for='line in cas.lines'>{{line}}</p>
-                  </td>
-                </tr>
-              </table>
-            
-            </div>
 
           </div>
 
-          <div v-if='currentView == "timeline"' class="centrer" id="experience">
+        </div>
 
-            <div v-for='exp in experience' style="padding-bottom: 20px;">
+        <div v-if='currentView == "timeline" && medata' class="centrer" id="experience">
 
-              <table style="width: 400px;" :class="exp.type">
-                <tr><td>{{exp.type}}</td></tr>
-                <tr v-if='exp.place'><th>
+          <div v-for='exp in experience' style="padding-bottom: 20px;">
+
+            <table style="width: 400px;" :class="exp.type">
+              <tr><td>{{exp.type}}</td></tr>
+              <tr v-if='exp.place'>
+                <th>
                   <a v-if='exp.place.url != ""' :href="exp.place.url" target="_blank">{{exp.place.name}}</a>
                   <span v-if='exp.place.url == ""'>{{exp.place.name}}</span>
-                </th></tr>
-                <tr v-if='exp.title'><th>{{exp.title}}</th></tr>
-                <tr><td>{{exp.start}} - {{exp.end}}</td></tr>
-                <tr v-if='exp.description'><td>{{exp.description}}</td></tr>
-                <tr v-if='exp.keywords?.length > 0 || exp.extensive'>
-                  <td v-if='!isVisible(exp)'>
-                    <span class='clicker' @click='toggleVisible(exp)'>more...</span>
-                  </td>
-                  <td v-if='isVisible(exp)'>
-                    <span class='clicker' @click='toggleVisible(exp)'>less...</span>
-                  </td>
-                </tr>
-                <tr v-if='exp.extensive && isVisible(exp)'>
-                  <td>
-                    <p v-for='line in exp.extensive'>{{line}}</p>                    
-                  </td>
-                </tr>
-                <tr v-if='exp.keywords?.length > 0 && isVisible(exp)'>
-                  <td><slot v-for='word in exp.keywords'>#{{word}} </slot></td>
-                </tr>
-              </table>
-              
-            </div>
+                </th>
+              </tr>
+              <tr v-if='exp.title'><th>{{exp.title}}</th></tr>
+              <tr><td>{{exp.start}} - {{exp.end}}</td></tr>
+              <tr v-if='exp.description'><td>{{exp.description}}</td></tr>
+              <tr v-if='exp.keywords?.length > 0 || exp.extensive'>
+                <td v-if='!isVisible(exp)'>
+                  <span class='clicker' @click='toggleVisible(exp)'>more...</span>
+                </td>
+                <td v-if='isVisible(exp)'>
+                  <span class='clicker' @click='toggleVisible(exp)'>less...</span>
+                </td>
+              </tr>
+              <tr v-if='exp.extensive && isVisible(exp)'>
+                <td>
+                  <p v-for='line in exp.extensive'>{{line}}</p>                    
+                </td>
+              </tr>
+              <tr v-if='exp.keywords?.length > 0 && isVisible(exp)'>
+                <td class="keyword">
+                  <slot v-for='w in enrichKeywords(exp.keywords)'>
+                    <span :title='w.description' :class='w.type'>
+                      #{{w.keyword}} 
+                    </span>
+                  </slot>
+                </td>
+              </tr>
+            </table>
 
           </div>
 
-          <div v-if='currentView == "techniques"' class="middler">
+        </div>
+
+        <div v-if='currentView == "techniques" && medata' class="middler">
+          <table>
+            <tr>
+              <th></th>
+              <th v-for='year in years'>{{year | shortYear}}</th>
+            </tr>
+            <tr v-for='tech in techniques'>
+              <td>{{tech.name}}</td>
+              <td v-for='year in years' v-bind:class="tech.work.includes(year) ? 'work' : (tech.education.includes(year) ? 'education' : (tech.private.includes(year) ? 'private' : ''))"></td>
+            </tr>
+            <tr>
+              <td rowspan="3"></td>
+              <td class="work"></td>
+              <td colspan="100">work</td>
+            </tr>
+            <tr>
+              <td class="education"></td>
+              <td colspan="100">education</td>
+            </tr>
+            <tr>
+              <td class="private"></td>
+              <td colspan="100">spare time</td>
+            </tr>
+          </table>
+        </div>
+
+        <div v-if='currentView == "wakatime"' class="centrer">
+
+          <div v-for="type in loadedWakaTypes" style="padding-bottom: 20px; display: grid;">
             <table>
               <tr>
-                <th></th>
-                <th v-for='year in years'>{{year | shortYear}}</th>
+                <th>{{type.header}}</th>
+                <th>7 days</th>
+                <th>30 days</th>
+                <th>1 year</th>
               </tr>
-              <tr v-for='tech in techniques'>
-                <td>{{tech.name}}</td>
-                <td v-for='year in years' v-bind:class="tech.work.includes(year) ? 'work' : (tech.education.includes(year) ? 'education' : (tech.private.includes(year) ? 'private' : ''))"></td>
-              </tr>
-              <tr>
-                <td rowspan="3"></td>
-                <td class="work"></td>
-                <td colspan="100">work</td>
-              </tr>
-              <tr>
-                <td class="education"></td>
-                <td colspan="100">education</td>
-              </tr>
-              <tr>
-                <td class="private"></td>
-                <td colspan="100">spare time</td>
+              <tr v-for='x in type.sortedData()'>
+                <td v-bind:style="{color: x.color}">{{x.name}}</td>
+                <td v-bind:class="['number', x.direction7 ]">{{x.percent7 | fixed(2)}}%</td>
+                <td v-bind:class="['number', x.direction30 ]">{{x.percent30 | fixed(2)}}%</td>
+                <td class="number">{{x.percentYear | fixed(2)}}%</td>
               </tr>
             </table>
           </div>
 
-          <div v-if='currentView == "wakatime"' class="centrer">
+        </div>
 
-              <div v-for="type in loadedWakaTypes" style="padding-bottom: 20px; display: grid;">
-                <table>
-                  <tr>
-                    <th>{{type.header}}</th>
-                    <th>7 days</th>
-                    <th>30 days</th>
-                    <th>1 year</th>
-                  </tr>
-                  <tr v-for='x in type.sortedData()'>
-                    <td v-bind:style="{color: x.color}">{{x.name}}</td>
-                    <td v-bind:class="['number', x.direction7 ]">{{x.percent7 | fixed(2)}}%</td>
-                    <td v-bind:class="['number', x.direction30 ]">{{x.percent30 | fixed(2)}}%</td>
-                    <td class="number">{{x.percentYear | fixed(2)}}%</td>
-                  </tr>
-                </table>
-              </div>
+        <div v-if='currentView == "github"' class="centrer">
 
+          <div v-if="githubdata" class="lefty">
+            <table>
+              <tr><th colspan="3">latest commits at GitHub</th></tr>
+              <tr v-for="event in githubCommits">
+                <td>{{event.created_at | cleanDate}}</td>
+                <td>
+                  <div v-for="commit in event.payload.commits"><a :href="'https://github.com/' + event.repo.name + '/commit/' + commit.sha" target="_blank">{{commit.message}}</a></div>
+                </td>
+                <td><a :href="'https://github.com/' + event.repo.name" target="_blank">{{event.repo.name}}</a></td>
+              </tr>
+            </table>
           </div>
 
-          <div v-if='currentView == "github"' class="centrer">
-          
-            <div v-if="githubdata" class="lefty">
-              <table>
-                <tr><th colspan="3">{{t('CommitsTitle')}}</th></tr>
-                <tr v-for="event in githubCommits">
-                  <td>{{event.created_at | cleanDate}}</td>
-                  <td>
-                    <div v-for="commit in event.payload.commits"><a :href="'https://github.com/' + event.repo.name + '/commit/' + commit.sha" target="_blank">{{commit.message}}</a></div>
-                  </td>
-                  <td><a :href="'https://github.com/' + event.repo.name" target="_blank">{{event.repo.name}}</a></td>
-                </tr>
-              </table>
-            </div>
+        </div>
 
-          </div>
-         
-
-          <div class="righty" style="display: none;">
-              <table>
-                <tr><th>Private experience</th></tr>
-                <tr v-for='word in medata.privateexperience'><td>#{{word}}</td></tr>
-              </table>
-          </div>
-
-          
-
-          </div>
-
-        </div>      
-      
       </div>
-      
-      <script src="pageApp.js"></script>
 
-    </body>
+    </div>      
+
+    <script src="pageApp.js"></script>
+
+  </body>
 
 </html>

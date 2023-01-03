@@ -31,8 +31,8 @@ body {
 
 #menu .current {
     width: 100%;
-    color: #000;
-    background-color: #666; 
+    color: #999;
+    background-color: #222; 
     padding-top: 3px;
     padding-bottom: 3px;   
 }
@@ -45,11 +45,19 @@ body {
     display: block; 
 }
 
+#menu a:hover {
+    background-color: #777;
+}
+
 #content {
     grid-column: 2;
     grid-row: 1;
     overflow: auto;
     text-align: center;
+}
+
+#cases ul {
+    margin: 2px;
 }
 
 .middler {
@@ -145,4 +153,17 @@ body {
 .clicker {
     cursor: hand;
     color: #559;
+}
+
+.keyword .technology {
+    color: #559;
+}
+.keyword .application {
+    color: #959;
+}
+.keyword .language {
+    color: #595;
+}
+.keyword .os {
+    color: #955;
 }

@@ -1,0 +1,571 @@
+brief: 
+- I've worked with system development since the year 2000. In later years the focus has been more on solution architecture, but quite some amount of system development occurs still
+- I'm solution oriented, I have a sixth sense about forseeing what could be problematic
+- I'm a fast learner and will quite quickly feel familiar in new systems and solutions
+- If any problems occur, I will easily find the probable root cause    
+
+notsobrief: 
+- The story begins with me being born and raised in the small town of Alingås, less than an hours travel from Gothenburg, where I still live to this day.
+  I've always had an interest for technology and I got hooked on programming early when I got to play around with BASIC on the Luxor ABC80 in the 80s.
+  The ABC80 was later switched for an Amiga 500 that I used for gaming and quite some programming in AMOS BASIC.
+  In high school I had som courses in BASIC, Pascal, C++, Assembler and Machine code.
+
+- I newer thought about actually working as a programmer but as it happened I joined some classes after High School where i learnt Visual Basic, SQL, ASP, etc.
+  That led to me getting an internship at Part Trap where I helped create customer specific and standard solutions; both application and web sites.
+  The first years we programmed in Visual Basic and classic ASP but we fully embraced the .Net-environment from it's first release.
+  Over the years at Part Trap we embraced C# and dabbled with a plethora of techniques; WebForms, MVC, VB.Net, Knockout.js, Angular.js, Azure, ...
+  I stayed there for many years and besides programming I also took care of Networking, Hardware, Server, Build servers, Deployments, Installations and some customer support.
+
+- But after one and a half decade it was time for me to get some new challenges so I got a job as system developer at Alektum Group.
+  The technologies were mostly familiar as most things were built on the Microsoft stack. But the systems and the domain was new.
+  But... I am a fast learner and it didn't take long before I was well versed in both new and legacy solutions.
+
+- After some years my role shifted to more of a solutions architect. I really enjoy seeing the whole picture and coming up with solutions that work well with current and future systems.
+  This were some happy years. I really felt that my skills, my thinking and my personality got to a great use at Alektum Group
+
+- But as it sometimes is; it was once again time to do something new...
+
+- So, me and a couple of guys that I've gotten to know over the years started our own IT consultancy business.
+  We offer our services, our skills and our experience for the benefit of our customers. We got some 100 years combined experience in software development and most of them in the fintech domain.
+
+- So... this is the "short" story of how I ended up where I am today
+
+- "\"Every new beginning comes from some other beginning's end\""
+
+bigandsmall:
+  synopsis: Some case studies of what I've done. Well, not exactly "studies", but brief anonymized examples of big and small things I've been involved with...
+  
+  cases:
+
+  - title: Pricing and inventory logic
+    lines:
+    - Design, development and maintenance of logic components for advanced pricing and inventory calculations
+
+  - title: Hardware/network
+    lines: 
+    - Design of network infrastructure
+    - Purchase of servers, client pcs, networking hardware etc
+    - Implementation, configuration and maintenance of servers, firewalls, storage, backup, mail servers, sql servers, web servers, etc
+  
+  - title: Integration to ERP, CRM, PSP, etc
+    lines: 
+    - Design, development and maintenance of components for integrating to ERP systems, CRM systems, PSP solutions, etc
+
+  - title: Integration towards a big customer standard solution for data exchange
+    lines:
+    - Assisted the customer with business know-how and feedback during the specification phase at their side
+    - Design and development of the integration at our side
+    - Continuous development of the system according the the customer's (and our) needs
+
+  - title: Overall solution for integrating with customers
+    lines:
+    - Design of system, processes and way of working
+    - Evaluation of different techniques and patterns
+    - Evalutaion of third party systems
+    - Review of existing system and processes to find a solution that is easier and more clear to all stake holders and keeps the rate of failures (and support tickets) as low as possible
+                
+  - title: Advanced ERP connections
+    lines:
+    - Main responsible for design, development and maintenance of server components for data collection, syncronization, replication and integration towards a multitude of ERP systems
+
+  - title: Customer support
+    lines: 
+    - Support for custom and standard solutions used by customers
+  
+  - title: Debt information exchange
+    lines:
+    - Design and development of solution for exchanging debt information with authorities
+
+  - title: Document delivery
+    lines:
+    - Design and development of solution for sending letters, emails, text messages, etc
+    - Integration to multiple third parties
+
+  - title: Credit information service
+    lines:
+    - Development and maintanence of existing solution for credit information
+    - Pre-study, followup and implementation of shut down of the solution when changed to a rebuilt platform
+
+  - title: System owner
+    lines: 
+    - Responsible for internal and external system for continuous delivery (GitHub, TeamCity, Octopus deploy, ...)
+    - Including implementation, configuration and maintenance
+  
+  - title: Payment solution
+    lines:
+    - Development and maintenance of existing solution for invoice or card payemtns
+    - Development of API for monitoring
+    - Development of tool for administration, monitoring, tracking and troubleshooting
+                
+  - title: Architecture for SaaS solution
+    lines:
+    - Design of technical architecture for SaaS solution on top of Microsoft Azure
+    - Also implementation, operation and development of system for automatic monitoring of the solution
+
+  - title: Change of service provider för credit information
+    lines:
+    - Pre-study of what systems will be affected, and how
+    - Planned for the change to be able to switch with the least amount of interference
+    - Development of needed changes in critical parts of the environment
+    - Continuous follow-ups and communications with project member, stakeholders and providers
+
+about:
+  name: [henrik bergqvist]
+  born: [1978]
+  lives: [alingsås]
+  languages: 
+  - swedish (fluent)
+  - english (fluent)
+  characteristics:
+  - solution oriented
+  - taking responsibility
+  - positive
+  - curios
+  - helpful
+  - likes challenges
+  - easily understand things
+
+links: 
+  email: mailto://mail@henrikbergqvist.com
+  linkedIn: https://www.linkedin.com/in/henrikbergqvist78
+  github: https://github.com/hbbq
+
+experience:
+
+- type: work
+  place:
+    name: Tour & Andersson AB
+    location: Ljung, Sweden
+    url: https://www.imi-hydronic.com/sv-se/our-brands/imi-ta
+  title: blue collar
+  start: "1997-06-01"
+  end: "1998-03-31"
+  description: Assembly of hydronic valves
+
+- type: work
+  place:
+    name: Parttrap AB
+    location: Gothenburg, Sweden
+    url: http://www.parttrap.com
+  title: internship
+  start: "2000-06-01"
+  end: "2000-07-31"
+  description: System development
+  keywords: [web, asp, tsql, html, js, vb]
+
+- type: work
+  place:
+    name: Actinovus
+  title: operations manager
+  start: "2014-09-01"
+  end: "2016-03-31"
+  description: Support and supervision of hosted solutions
+  extensive:
+  - Support and supervision of hosted solutions in Microsoft Azure
+  - On call support and operation of Part Trap's SaaS services
+  keywords: [azure]
+
+- type: work
+  place:
+    name: Parttrap AB
+    location: Gothenburg, Sweden
+    url: http://www.parttrap.com
+  title: senior software engineer / operations manager
+  start: "2000-08-01"
+  end: "2016-09-30"
+  description: System development
+  extensive:
+  - Development of web solutions in ASP.Net (C#, VB.Net, MVC, Web forms) and previously also classic ASP
+  - Development of windows applications & services in .Net (C#, VB.Net) and previously VB 6
+  - Integration to ERP systems (e.g., Dynamics AX, Dynamics NAV, SAP, Epicor ERP, iScala)
+  - Integration to Payment providers (e.g., PayPal, DIBS)
+  - Integration to Microsoft CRM
+  - Advanced T-SQL
+  - Database design, implementation, management
+  - Implementation, maintenance and supervision of hosted solutions in Microsoft Azure
+  - Setup and maintenance of Continuous Delivery (GitHub, TeamCity, Octopus Deploy)
+  - Network-/system maintenance
+  keywords: [
+    dotnet, aspnet, mvc, csharp, tsql, vbnet, html, css, js, jquery, angular, rest, erp, azure,
+    git, github, teamcity, octopus, cicd, dynamicsax, dynamicsnav, epicoriscala, epicorerp, asp, 
+    webforms, vb, cal
+  ]
+
+- type: work
+  place:
+    name: Alektum Group AB
+    location: Gothenburg, Sweden
+    url: http://www.alektumgroup.se
+  title: senior system developer
+  start: "2016-10-01"
+  end: "2018-04-30"
+  description: System development
+  extensive:
+  - Architecture and development of web sites, applications, libraries, API etc.
+  keywords: [
+    dotnet, netcore, aspnet, aspnetcore, mvc, csharp, tsql, html, css, js, jquery, angular, rest,
+    git, tfs, cicd, sqlclr, webforms
+  ]
+
+- type: work
+  place:
+    name: Alektum Group AB
+    location: Gothenburg, Sweden
+    url: http://www.alektumgroup.se
+  title: solution architect
+  start: "2018-05-01"
+  end: "2022-11-10"
+  description: Solution architecture / System development
+  extensive:
+  - Software and solution architecture
+  - Making use cases, process flow charts, blue prints and dokumentation
+  - Proof of Concept development
+  - Take part in big and small projects, keeping track of the big picture. Helping to find the best solution and foresee and avoid pitfalls and unwanted side effects in connected systems
+  - Troubleshooting and support for more advanced problems
+  keywords: [
+    dotnet, netcore, aspnet, aspnetcore, mvc, csharp, tsql, html, css, js, jquery, angular, rest,
+    git, tfs, cicd, sqlclr, webforms
+  ]
+
+- type: work
+  place:
+    name: Conprimo AB
+    location: Gothenburg, Sweden
+    url: https://conprimo.se
+  title: IT consultant / senior system developer / solutions architect
+  start: "2022-11-11"
+  end: "current"
+  description: IT Consulting
+  keywords: [
+    dotnet, csharp, tsql, tsx, react, ef, git
+  ]
+
+- type: education
+  place:
+    name: Alströmergymnasiet
+    location: Alingsås, Sweden
+    url: https://www.alingsas.se/utbildning-och-barnomsorg/alstromergymnasiet
+  title: high school
+  start: "1994"
+  end: "1997"
+  description: The Natural Science Programme / Technical
+  keywords: [basic, pascal, cpp, asm, mc]
+
+- type: education
+  place:
+    name: Folkuniversitetet
+    location: Alingsås, Sweden
+  title: basic computer- / communication- / network education
+  start: "1999-02-15"
+  end: "1999-06-18"
+  keywords: [
+    win95, office97, network, winnt, novell, html, vb, cpp
+  ]
+
+- type: education
+  place:
+    name: WM-data
+    location: Gothenburg, Sweden
+  title: internet- / intranet developer
+  start: "1999-09-13"
+  end: "2000-06-16"
+  keywords: [
+    ps, indesign, ill, dreamweaver, homesite, html, winnt, unix, tcpip, iis, 
+    apache, exchange, sqlserver, tsql, asp, js
+  ]
+
+- type: other
+  place:
+    name: Alingsås Discgolf
+    location: Alingsås, Sweden
+    url: https://avdiscgolf.se
+  title: webmaster
+  start: "2013-01-01"
+  end: "2020-02-01"
+  description: Maintenance and development of home page for the local disc golf club
+  keywords: [php]
+
+- type: other
+  place:
+    name: Alingsås Discgolf
+    location: Alingsås, Sweden
+    url: https://avdiscgolf.se
+  title: board member
+  start: "2015-02-01"
+  end: "2020-02-01"
+  description: Chairman 2015-2016 / Secretary 2017-2019
+
+- type: other
+  place:
+    name: Mensa Sweden
+    location: Sweden
+    url: https://mensa.se
+  title: support assistant / support manager
+  start: "2017"
+  end: "2018"
+  extensive:
+  - Responsible for Mensa Sweden's member support
+  - Organizing and coordinating the work in the support group
+  - Reporting to Mensa Sweden's board
+  - Helping members with membership- and invoicing issues among other things
+  - Helping members / non-members with inquiries about the organization and it's activities
+
+- type: other
+  place:
+    name: Alektum Group AB
+    location: Gothenburg, Sweden
+    url: http://www.alektumgroup.se
+  title: board member of trade club
+  start: "2018"
+  end: "2022"
+
+- type: other
+  place:
+    name: Alektum Group AB
+    location: Gothenburg, Sweden
+    url: http://www.alektumgroup.se
+  title: work environment representative
+  start: "2018"
+  end: "2022"
+
+keywords:
+  angular: 
+    name: Angular.js
+    type: technology
+  apache: 
+    name: Apache HTTP Server
+    type: application
+  asm: 
+    name: Assembler
+    type: language
+  asp: 
+    name: Classic ASP
+    type: technology
+  aspnet: 
+    name: ASP.NET
+    type: technology
+  aspnetcore: 
+    name: ASP.NET Core
+    type: technology
+  azure:
+    name: Microsoft Azure
+    type: technology
+  cal: 
+    name: C/AL (Client/server Application Language)
+    type: language
+  cicd: 
+    name: CI/CD
+    type: technology
+  cpp: 
+    name: C++
+    type: language
+  csharp: 
+    name: C#
+    type: language
+  css:
+    name: CSS
+    type: language
+  dotnet: 
+    name: .NET
+    type: technology
+  dynamicsax:
+    name: Microsoft Dynamics AX
+    type: application
+  dynamicsnav:
+    name: Microsoft Dynamics Navision
+    type: application
+  ef: 
+    name: Entity Framework
+    type: technology
+  epicorerp:
+    name: Epicor ERP
+    type: application
+  epicoriscala:
+    name: Epicor iScala
+    type: application
+  erp: 
+    name: Enterprise Resource Planning system
+    type: application
+  exchange: 
+    name: Exchange Server
+    type: application
+  git:
+    name: Git
+    type: technology
+  github:
+    name: GitHub
+    type: application
+  html:
+    name: HTML
+    type: language
+  iis: 
+    name: Internet Information Services
+    type: application
+  ill: 
+    name: Illustrator
+    type: application
+  jquery:
+    name: JQuery
+    type: technology
+  js: 
+    name: JavaScript
+    type: language
+  mc: 
+    name: Machine code
+    type: language
+  mvc:
+    name: Model-View-Controllet
+    type: technology
+  netcore: 
+    name: .NET Core
+    type: technology
+  octopus: 
+    name: Octopus Deploy
+    type: application
+  php:
+    name: PHP
+    type: language
+  ps: 
+    name: PhotoShop
+    type: application
+  react: 
+    name: React
+    type: technology
+  rest:
+    name: REST
+    type: technology
+  sqlclr: 
+    name: SQL CLR
+    type: technology
+  tcpip: 
+    name: TCP/IP
+    type: technology
+  teamcity:
+    name: TeamCity
+    type: application
+  tfs: 
+    name: Team Foundation Server
+    type: application
+  tsql: 
+    name: Transact SQL
+    type: language
+  tsx: 
+    name: TypeScript
+    type: language
+  vb: 
+    name: Visual Basic
+    type: language
+  vbnet: 
+    name: Visual Basic .NET
+    type: language
+  web:
+    name: Web
+    type: technology
+  webforms:
+    name: WebForms
+    type: technology
+  win95: 
+    name: Windows 95
+    type: os
+  winnt: 
+    name: Windows NT
+    type: os
+  
+
+techniques: 
+- name: .NET
+  work: [2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
+  education: []
+  private: []
+- name: .NET Core
+  work: [2016, 2017, 2018, 2019, 2020, 2021, 2022]
+  education: []
+  private: []
+- name: ASP
+  work: [2000, 2001, 2002, 2003, 2004]
+  education: [1998, 1999]
+  private: []
+- name: ASP.NET MVC
+  work: [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
+  education: []
+  private: []
+- name: Azure
+  work: [2011, 2012, 2013, 2014, 2015, 2016]
+  education: []
+  private: []
+- name: Blazor
+  work: []
+  education: []
+  private: [2022]
+- name: C#
+  work: [2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
+  education: []
+  private: []
+- name: F#
+  work: []
+  education: []
+  private: [2018, 2019, 2020, 2021, 2022, 2023]
+- name: Git
+  work: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
+  education: []
+  private: []
+- name: Lua
+  work: []
+  education: []
+  private: [2018, 2019]
+- name: PHP
+  work: []
+  education: []
+  private: [2013, 2014, 2015, 2016, 2017, 2018]
+- name: Python
+  work: []
+  education: []
+  private: [2019, 2020]
+- name: React
+  work: [2022, 2023]
+  education: []
+  private: []
+- name: SQL
+  work: [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
+  education: [1998, 1999]
+  private: []
+- name: Typescript
+  work: [2022, 2023]
+  education: []
+  private: []
+- name: VB.NET
+  work: [2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016]
+  education: []
+  private: []
+- name: VB6
+  work: [2000, 2001, 2002, 2003]
+  education: [1998, 1999]
+  private: []
+- name: Vue.js
+  work: [2017, 2018, 2019]
+  education: []
+  private: [2020, 2021, 2022, 2023]
+- name: Lodash
+  work: []
+  education: []
+  private: [2020, 2021, 2022, 2023]
+- name: Entity framework
+  work: [2018, 2019, 2020, 2021, 2022, 2023]
+  education: []
+  private: []
+- name: HTML
+  work: [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
+  education: [1998, 1999]
+  private: []
+- name: AngularJS
+  work: [2015, 2016, 2017]
+  education: []
+  private: []
+- name: C/AL
+  work: [2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016]
+  education: []
+  private: []
+- name: Knockout.js
+  work: [2022, 2023]
+  education: []
+  private: []
