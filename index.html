@@ -76,6 +76,15 @@
                   </ul>
                 </td>
               </tr>
+              <tr v-if='cas.keywords?.length > 0'>
+                <td class="keyword">
+                  <slot v-for='w in enrichKeywords(cas.keywords)'>
+                    <span :title='w.description' :class='w.type'>
+                      #{{w.keyword}} 
+                    </span>
+                  </slot>
+                </td>
+              </tr>
             </table>
 
           </div>

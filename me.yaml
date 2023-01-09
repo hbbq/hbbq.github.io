@@ -40,22 +40,26 @@ bigandsmall:
   - title: Pricing and inventory logic
     lines:
     - Design, development and maintenance of logic components for advanced pricing and inventory calculations
+    keywords: [csharp, .NET, dynamicsax, dynamicsnav, epicorerp, epicoriscala, erp, tsql, vb, vbnet]
 
   - title: Hardware/network
     lines: 
     - Design of network infrastructure
     - Purchase of servers, client pcs, networking hardware etc
     - Implementation, configuration and maintenance of servers, firewalls, storage, backup, mail servers, sql servers, web servers, etc
+    keywords: [exchange, sqlserver, tcpip, network]
   
   - title: Integration to ERP, CRM, PSP, etc
     lines: 
     - Design, development and maintenance of components for integrating to ERP systems, CRM systems, PSP solutions, etc
+    keywords: [csharp, dotnet, dynamicsax, dynamicsnav, epicorerp, epicoriscala, erp, tsql, vbnet]
 
   - title: Integration towards a big customer standard solution for data exchange
     lines:
     - Assisted the customer with business know-how and feedback during the specification phase at their side
     - Design and development of the integration at our side
     - Continuous development of the system according the the customer's (and our) needs
+    keywords: [csharp, dotnet, ef, netcore, rest, tsql]
 
   - title: Overall solution for integrating with customers
     lines:
@@ -63,10 +67,11 @@ bigandsmall:
     - Evaluation of different techniques and patterns
     - Evalutaion of third party systems
     - Review of existing system and processes to find a solution that is easier and more clear to all stake holders and keeps the rate of failures (and support tickets) as low as possible
-                
+                    
   - title: Advanced ERP connections
     lines:
     - Main responsible for design, development and maintenance of server components for data collection, syncronization, replication and integration towards a multitude of ERP systems
+    keywords: [csharp, dotnet, dynamicsax, dynamicsnav, epicorerp, epicoriscala, erp, tsql, vbnet]
 
   - title: Customer support
     lines: 
@@ -75,32 +80,38 @@ bigandsmall:
   - title: Debt information exchange
     lines:
     - Design and development of solution for exchanging debt information with authorities
+    keywords: [csharp, dotnet, ef, netcore, rest, tsql]
 
   - title: Document delivery
     lines:
     - Design and development of solution for sending letters, emails, text messages, etc
     - Integration to multiple third parties
+    keywords: [csharp, dotnet, netcore, rest, tsql]
 
   - title: Credit information service
     lines:
     - Development and maintanence of existing solution for credit information
     - Pre-study, followup and implementation of shut down of the solution when changed to a rebuilt platform
+    keywords: [aspnet, csharp, dotnet, sqlclr, tsql]
 
   - title: System owner
     lines: 
     - Responsible for internal and external system for continuous delivery (GitHub, TeamCity, Octopus deploy, ...)
     - Including implementation, configuration and maintenance
+    keywords: [github, octopus, teamcity]
   
   - title: Payment solution
     lines:
     - Development and maintenance of existing solution for invoice or card payemtns
     - Development of API for monitoring
     - Development of tool for administration, monitoring, tracking and troubleshooting
+    keywords: [csharp, dotnet, netcore, rest, tsql]
                 
   - title: Architecture for SaaS solution
     lines:
     - Design of technical architecture for SaaS solution on top of Microsoft Azure
     - Also implementation, operation and development of system for automatic monitoring of the solution
+    keywords: [azure]
 
   - title: Change of service provider för credit information
     lines:
@@ -350,6 +361,9 @@ keywords:
   azure:
     name: Microsoft Azure
     type: technology
+  basic:
+    name: BASIC
+    type: language
   cal: 
     name: C/AL (Client/server Application Language)
     type: language
@@ -368,6 +382,9 @@ keywords:
   dotnet: 
     name: .NET
     type: technology
+  dreamweaver:
+    name: DreamWeaver
+    type: application
   dynamicsax:
     name: Microsoft Dynamics AX
     type: application
@@ -395,6 +412,9 @@ keywords:
   github:
     name: GitHub
     type: application
+  homesite:
+    name: HomeSite
+    type: application
   html:
     name: HTML
     type: language
@@ -403,6 +423,9 @@ keywords:
     type: application
   ill: 
     name: Illustrator
+    type: application
+  indesign:
+    name: Indesign
     type: application
   jquery:
     name: JQuery
@@ -419,9 +442,21 @@ keywords:
   netcore: 
     name: .NET Core
     type: technology
+  network:
+    name: Network
+    type: technology
+  novell:
+    name: novell
+    type: technology
   octopus: 
     name: Octopus Deploy
     type: application
+  office97:
+    name: Microsoft Office 97
+    type: application
+  pascal:
+    name: Pascal
+    type: language
   php:
     name: PHP
     type: language
@@ -437,6 +472,9 @@ keywords:
   sqlclr: 
     name: SQL CLR
     type: technology
+  sqlserver:
+    name: Microsoft SQL server
+    type: application
   tcpip: 
     name: TCP/IP
     type: technology
@@ -452,6 +490,9 @@ keywords:
   tsx: 
     name: TypeScript
     type: language
+  unix:
+    name: UNIX
+    type: os
   vb: 
     name: Visual Basic
     type: language
@@ -480,7 +521,7 @@ techniques:
 - name: .NET Core
   work: [2016, 2017, 2018, 2019, 2020, 2021, 2022]
   education: []
-  private: []
+  private: [2023]
 - name: ASP
   work: [2000, 2001, 2002, 2003, 2004]
   education: [1998, 1999]
@@ -496,7 +537,7 @@ techniques:
 - name: Blazor
   work: []
   education: []
-  private: [2022]
+  private: [2022, 2023]
 - name: C#
   work: [2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023]
   education: []
