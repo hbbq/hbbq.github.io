@@ -104,6 +104,7 @@
                 </th>
               </tr>
               <tr v-if='exp.title'><th>{{exp.title}}</th></tr>
+              <tr v-if='exp.place.location'><td>{{exp.place.location}}</td></tr>
               <tr><td>{{exp.start}} - {{exp.end}}</td></tr>
               <tr v-if='exp.description'><td>{{exp.description}}</td></tr>
               <tr v-if='exp.keywords?.length > 0 || exp.extensive'>

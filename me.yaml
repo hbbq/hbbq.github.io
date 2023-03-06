@@ -338,6 +338,15 @@ experience:
   title: work environment representative
   start: "2018"
   end: "2022"
+  
+- type: other
+  place:
+    name: Conprimo AB
+    location: Gothenburg, Sweden
+    url: https://conprimo.se
+  title: alternate board member
+  start: "2022-10-07"
+  end: "current"
 
 keywords:
   angular: 
