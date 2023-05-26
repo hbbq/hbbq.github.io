@@ -29,7 +29,7 @@ const WakaType = (type, header, key7, key30, keyYear) => ({
             };
         }).value();
     },
-    sortedData: function () {return _(this.mergedData()).orderBy('percent7', 'desc').value();},
+    sortedData: function () {return _(this.mergedData()).orderBy(['percent7', 'percent30', 'percentYear'], ['desc', 'desc', 'desc']).value();},
 });
 
 const routes = {
