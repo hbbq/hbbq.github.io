@@ -29,7 +29,8 @@ const WakaType = (type, header, key7, key30, keyYear) => ({
             };
         }).value();
     },
-    sortedData: function () {return _(this.mergedData()).orderBy(['percent7', 'percent30', 'percentYear'], ['desc', 'desc', 'desc']).value();},
+    filteredData: function() {return _(this.mergedData()).filter(x => x.percent7 > 0 || x.percent30 > 0 || x.percentYear > 0).value();},
+    sortedData: function () {return _(this.filteredData()).orderBy(['percent7', 'percent30', 'percentYear'], ['desc', 'desc', 'desc']).value();},
 });
 
 const routes = {
