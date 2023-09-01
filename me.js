@@ -272,11 +272,11 @@ var me = {
             end: "current",
             description: "IT Consulting",
             place: {
-                name: "Conprimo AB",
+                name: "Caporum Consulting AB",
                 location: "Gothenburg, Sweden",
-                url: "https://conprimo.se/",
+                url: "https://caporum.se/",
             },
-            title: "IT consultant / senior system developer",
+            title: "CO-owner / IT consultant / senior system developer",
             keywords: [
                 ".NET", "C#", "T-SQL", "TypeScript", "React", "EntityFramework", "Git"],
         },
