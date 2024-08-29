@@ -341,11 +341,20 @@ experience:
   
 - type: other
   place:
-    name: Conprimo AB
+    name: Purple Oak Invest AB
     location: Gothenburg, Sweden
-    url: https://conprimo.se
+    url: 
   title: alternate board member
   start: "2022-10-07"
+  end: "2023-10-22"
+
+- type: other
+  place:
+    name: Purple Oak Invest AB
+    location: Gothenburg, Sweden
+    url:
+  title: board member
+  start: "2023-10-23"
   end: "current"
 
 keywords:
